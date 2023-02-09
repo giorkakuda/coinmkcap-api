@@ -5,13 +5,26 @@ function getData(){
     .then((response) => response.json())
     .then((data) => {
         console.log(data) 
-        const name = data.data[0].name
-        console.log(name)
 
-        const quote = data.data[0].quote
-        console.log(quote)
+        const btc = data.data[0].quote
+        console.log(btc)
         document.getElementById('price')
-        .innerHTML = parseFloat(quote.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
+        .innerHTML = parseFloat(btc.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
+        
+        const eth = data.data[1].quote
+        console.log(eth)
+        document.getElementById('price2')
+        .innerHTML = parseFloat(eth.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
+
+        const bnb = data.data[3].quote
+        console.log(bnb)
+        document.getElementById('price3')
+        .innerHTML = parseFloat(bnb.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
+
+        const doge = data.data[9].quote
+        console.log(doge)
+        document.getElementById('price4')
+        .innerHTML = parseFloat(doge.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
     })
 }
 
