@@ -17,7 +17,7 @@ function getData(){
         document.getElementById('price3')
         .innerHTML = parseFloat(bnb.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
 
-        const doge = data.data[9].quote
+        const doge = data.data[8].quote
         document.getElementById('price4')
         .innerHTML = parseFloat(doge.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
     })

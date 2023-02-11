@@ -103,13 +103,13 @@
 
                 const ethtot = data.data[1]
                 document.getElementById('rank')
-                .innerHTML = parseInt(ethtot.cmc_rank)
+                .innerHTML = (ethtot.cmc_rank)
 
                 document.getElementById('sym')
                 .innerHTML = (ethtot.symbol)
 
                 document.getElementById('cir')
-                .innerHTML = parseInt(ethtot.circulating_supply)
+                .innerHTML = (ethtot.circulating_supply).toLocaleString()
 
                 
                 const eth = data.data[1].quote

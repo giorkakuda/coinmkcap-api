@@ -103,13 +103,13 @@
 
                 const bnbtot = data.data[3]
                 document.getElementById('rank')
-                .innerHTML = parseInt(bnbtot.cmc_rank)
+                .innerHTML = (bnbtot.cmc_rank)
 
                 document.getElementById('sym')
                 .innerHTML = (bnbtot.symbol)
 
                 document.getElementById('cir')
-                .innerHTML = parseInt(bnbtot.circulating_supply)
+                .innerHTML = (bnbtot.circulating_supply).toLocaleString()
 
                 
                 const bnb = data.data[3].quote

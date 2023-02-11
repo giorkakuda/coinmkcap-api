@@ -103,13 +103,13 @@
 
                 const btctot = data.data[0]
                 document.getElementById('rank')
-                .innerHTML = parseInt(btctot.cmc_rank)
+                .innerHTML = (btctot.cmc_rank)
 
                 document.getElementById('sym')
                 .innerHTML = (btctot.symbol)
 
                 document.getElementById('cir')
-                .innerHTML = parseInt(btctot.circulating_supply)
+                .innerHTML = (btctot.circulating_supply).toLocaleString()
 
                 
                 const btc = data.data[0].quote

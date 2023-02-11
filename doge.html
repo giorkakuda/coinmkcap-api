@@ -103,13 +103,13 @@
 
                 const dogetot = data.data[8]
                 document.getElementById('rank')
-                .innerHTML = parseInt(dogetot.cmc_rank)
+                .innerHTML = (dogetot.cmc_rank)
 
                 document.getElementById('sym')
                 .innerHTML = (dogetot.symbol)
 
                 document.getElementById('cir')
-                .innerHTML = parseInt(dogetot.circulating_supply)
+                .innerHTML = (dogetot.circulating_supply).toLocaleString()
 
                 
                 const doge = data.data[8].quote
