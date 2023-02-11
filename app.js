@@ -1,7 +1,9 @@
 
+let apikey = "0b273a41-72ec-4cb6-8c21-35a4a6fb12eb";
 
 function getData(){ /*obfuscate api key*/
-    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=0b273a41-72ec-4cb6-8c21-35a4a6fb12eb")
+    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY="+ apikey)
+
     .then((response) => {
         if (!response.ok){
             throw new Error('Too many requests. API call limit exceeded. Please try again next month.');
