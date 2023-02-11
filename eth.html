@@ -98,7 +98,12 @@
         <script>
             function getData(){
             fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=0b273a41-72ec-4cb6-8c21-35a4a6fb12eb")
-            .then((response) => response.json())
+            .then((response) => {
+                if(!response.ok) {
+                    throw new Error('Too many requests. API call limit exceeded. Please try again next month.');
+                }
+                return response.json();
+            }) 
             .then((data) => {
 
                 const ethtot = data.data[1]
@@ -124,6 +129,16 @@
 
                 document.getElementById('per')
                 .innerHTML = parseFloat(eth.USD.percent_change_24h)
+            })
+            .catch ((error) => {
+                document.getElementById('rank').innerHTML = error.message;
+                document.getElementById('sym').innerHTML = error.message;
+                document.getElementById('cir').innerHTML = error.message;
+                document.getElementById('price').innerHTML = error.message;
+                document.getElementById('mkc').innerHTML = error.message;
+                document.getElementById('vol').innerHTML = error.message;
+                document.getElementById('per').innerHTML = error.message;
+
             })
         }
         getData()
