@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Bitcoin</title>
+        <title>Dogecoin</title>
         <style>
             * {
                 margin: 0px;
@@ -15,7 +15,7 @@
                 height: 450px;
                 background-color: white;
                 border-radius: 10px;
-                box-shadow: 0px 0px 10px orange;
+                box-shadow: 0px 0px 10px goldenrod;
                 
                 position: absolute;
                 top: 50%;
@@ -47,24 +47,24 @@
                 transition: transform 0.9s;        
             }
             .img2 {
-                height: 70px;  
+                height: 68px;  
                 margin-top: 30px;
-                margin-right: 7px;
+                margin-right: 10px;
             }
             .img2:hover {
                 border-radius: 50%;
-                box-shadow: 5px 5px 10px darkblue;
+                box-shadow: 5px 5px 10px orange;
                 transform: translate(-2px, -2px);
                 transition: transform 0.9s;
             }
             .img3 {
-                width: 70px;
+                height: 70px;
                 margin-right: 10px;
             }
             .img3:hover {
                 
                 border-radius: 50%;
-                box-shadow: 5px 5px 10px yellow;
+                box-shadow: 5px 5px 10px darkblue;
                 transform: translate(-2px, -2px);
                 transition: transform 0.9s;
             }
@@ -74,7 +74,7 @@
             .img4:hover {
                 
                 border-radius: 50%;
-                box-shadow: 5px 5px 10px darkgoldenrod;
+                box-shadow: 5px 5px 10px yellow;
                 transform: translate(-2px, -2px);
                 transition: transform 0.9s;
             }
@@ -91,9 +91,9 @@
             <h2>Change(24h%): <span id="per" class="span"></span></h2>
 
             <a href="index.html"><img src="image/button back.png" alt="" class="img"></a>
-            <a href="eth.html"><img src="image/eth2.png" alt="" class="img2"></a>
-            <a href="bnb.html"><img src="image/bnb2.png" alt="" class="img3"></a>
-            <a href="doge.html"><img src="image/doge2.png" alt="" class="img4"></a>
+            <a href="btc.html"><img src="image/btc2.png" alt="" class="img2"></a>
+            <a href="eth.html"><img src="image/eth2.png" alt="" class="img3"></a>
+            <a href="bnb.html"><img src="image/bnb2.png" alt="" class="img4"></a>
         </div>
         <script>
             function getData(){
@@ -101,37 +101,32 @@
             .then((response) => response.json())
             .then((data) => {
 
-                const btctot = data.data[0]
+                const dogetot = data.data[8]
                 document.getElementById('rank')
-                .innerHTML = parseInt(btctot.cmc_rank)
+                .innerHTML = parseInt(dogetot.cmc_rank)
 
                 document.getElementById('sym')
-                .innerHTML = (btctot.symbol)
+                .innerHTML = (dogetot.symbol)
 
                 document.getElementById('cir')
-                .innerHTML = parseInt(btctot.circulating_supply)
+                .innerHTML = parseInt(dogetot.circulating_supply)
 
                 
-                const btc = data.data[0].quote
+                const doge = data.data[8].quote
                 document.getElementById('price')
-                .innerHTML = parseFloat(btc.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
+                .innerHTML = parseFloat(doge.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
                 
                 document.getElementById('mkc')
-                .innerHTML = parseFloat(btc.USD.market_cap).toLocaleString('en', {style:'currency',currency: 'USD'})
+                .innerHTML = parseFloat(doge.USD.market_cap).toLocaleString('en', {style:'currency',currency: 'USD'})
 
                 document.getElementById('vol')
-                .innerHTML = parseFloat(btc.USD.volume_24h).toLocaleString('en', {style:'currency',currency: 'USD'})
+                .innerHTML = parseFloat(doge.USD.volume_24h).toLocaleString('en', {style:'currency',currency: 'USD'})
 
                 document.getElementById('per')
-                .innerHTML = parseFloat(btc.USD.percent_change_24h)
+                .innerHTML = parseFloat(doge.USD.percent_change_24h)
             })
         }
         getData()
         </script>
     </body>        
 </html>
-
-
-
-
-
