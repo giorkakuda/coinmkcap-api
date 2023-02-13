@@ -110,7 +110,7 @@
             }) 
             .then((data) => {
 
-                const dogetot = data.data[8]
+                const dogetot = data.data.find(coin => coin.symbol === 'DOGE')
                 document.getElementById('rank')
                 .innerHTML = (dogetot.cmc_rank)
 
@@ -121,7 +121,7 @@
                 .innerHTML = (dogetot.circulating_supply).toLocaleString()
 
                 
-                const doge = data.data[8].quote
+                const doge = data.data.find(coin => coin.symbol === '').quote
                 document.getElementById('price')
                 .innerHTML = parseFloat(doge.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
                 

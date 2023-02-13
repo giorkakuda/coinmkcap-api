@@ -20,11 +20,11 @@ function getData(){ /*obfuscate api key*/
         document.getElementById('price2')
         .innerHTML = parseFloat(eth.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
 
-        const bnb = data.data[3].quote
+        const bnb = data.data.find(coin => coin.symbol === 'BNB').quote
         document.getElementById('price3')
         .innerHTML = parseFloat(bnb.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
 
-        const doge = data.data[8].quote /* data.data.find(coin => coin.symbol === 'DOGE').quote => DIDN'T RETURN*/
+        const doge = data.data.find(coin => coin.symbol === 'DOGE').quote 
         document.getElementById('price4')
         .innerHTML = parseFloat(doge.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
     })

@@ -110,7 +110,7 @@
             }) 
             .then((data) => {
 
-                const bnbtot = data.data[3]
+                const bnbtot = data.data.find(coin => coin.symbol === 'BNB')
                 document.getElementById('rank')
                 .innerHTML = (bnbtot.cmc_rank)
 
@@ -121,7 +121,7 @@
                 .innerHTML = (bnbtot.circulating_supply).toLocaleString()
 
                 
-                const bnb = data.data[3].quote
+                const bnb = data.data.find(coin => coin.symbol === 'BNB').quote
                 document.getElementById('price')
                 .innerHTML = parseFloat(bnb.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
                 
