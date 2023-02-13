@@ -1,8 +1,8 @@
 
-let apikey = "0b273a41-72ec-4cb6-8c21-35a4a6fb12eb";
+import { apiKey } from "./app1";
 
 function getData(){ /*obfuscate api key*/
-    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY="+ apikey)
+    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY="+ apiKey)
 
     .then((response) => {
         if (!response.ok){
