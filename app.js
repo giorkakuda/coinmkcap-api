@@ -1,8 +1,10 @@
 
-import { apiKey } from "./app1";
+require("dotenv").config();
+const apikey = process.env.apikey;
+
 
 function getData(){ /*obfuscate api key*/
-    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY="+ apiKey)
+    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY="+ apikey)
 
     .then((response) => {
         if (!response.ok){

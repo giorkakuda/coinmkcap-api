@@ -24,3 +24,7 @@ var _0xe548=["\x30\x62\x32\x37\x33\x61\x34\x31\x2D\x37\x32\x65\x63\x2D\x34\x63\x
 //    .then((response) => response.json())
  //   .then((data) => console.log(data))  
   
+
+ //npm install dotenv --save
+//require("dotenv").config();
+//console.log(process.env.apikey)
