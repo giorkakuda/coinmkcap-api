@@ -16,11 +16,11 @@ function getData(){ /*obfuscate api key*/
     .then((data) => {
         console.log(data);
         
-        const btc = data.data[0].quote
+        const btc = data.data.find(coin => coin.symbol === 'BTC').quote
         document.getElementById('price')
         .innerHTML = parseFloat(btc.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
         
-        const eth = data.data[1].quote
+        const eth = data.data.find(coin => coin.symbol === 'ETH').quote
         document.getElementById('price2')
         .innerHTML = parseFloat(eth.USD.price).toLocaleString('en',{style:'currency',currency: 'USD'})
 

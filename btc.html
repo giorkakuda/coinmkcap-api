@@ -78,6 +78,20 @@
                 transform: translate(-2px, -2px);
                 transition: transform 0.9s;
             }
+            @media only screen and (min-width: 768px){
+                div {
+                width: 500px;
+                }
+                .img {
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+                .img2, .img3, img4 {
+                    height: 70px;  
+                    margin-top: 30px;
+                    margin-right: 40px;
+            }
+        }
         </style>
     </head>
     <body>
@@ -98,10 +112,14 @@
 
         <script>
             
-            import { apiKey } from "./app1";
+            const url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=";
+            const apiKey = '0b273a41-72ec-4cb6-8c21-35a4a6fb12eb';
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const apiUrl = proxyUrl + url + apiKey
 
             function getData(){ /*obfuscate api key*/
-            fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY="+ apiKey)
+                fetch(apiUrl)
+
             .then((response) => {
                 if(!response.ok) {
                     throw new Error('Too many requests. API call limit exceeded. Please try again next month.');
