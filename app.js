@@ -1,10 +1,11 @@
 
-require("dotenv").config();
-const apikey = process.env.apikey;
-
+const url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=";
+const apiKey = '0b273a41-72ec-4cb6-8c21-35a4a6fb12eb';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const apiUrl = proxyUrl + url + apiKey
 
 function getData(){ /*obfuscate api key*/
-    fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY="+ apikey)
+    fetch(apiUrl)
 
     .then((response) => {
         if (!response.ok){
@@ -13,6 +14,7 @@ function getData(){ /*obfuscate api key*/
         return response.json();
     })
     .then((data) => {
+        console.log(data);
         
         const btc = data.data[0].quote
         document.getElementById('price')
