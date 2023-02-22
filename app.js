@@ -10,7 +10,7 @@ function getData(){
     })
     .then((data) => {
         const response = JSON.parse(data.contents); // parsing JSON 
-        console.log(response);
+        //console.log(response);
         
         const btc = response.data.find(coin => coin.symbol === 'BTC').quote
         document.getElementById('price')
