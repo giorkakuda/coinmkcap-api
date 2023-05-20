@@ -37,3 +37,7 @@ function getData(){
 }
 
 getData()
+
+window.onload = function() {
+    alert("Please wait. Page loading, API retrieval may take a few seconds.");
+};
